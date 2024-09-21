@@ -14,10 +14,13 @@ class Agent:
         sys_prompt = {
             "role": "system",
             "content": f'''
+            You are going to be given a task and an identity.
+            With this information, you will 
             This is your task: ###{self.task}###.
             This is your identity: ###{self.identity}###, 
             
-            You should behave as your identity suggests, and you should follow the instructions specified by the task closely, and not go off topic.
+            You should behave as your identity suggests, and you should follow the instructions specified by the task closely
+            Do not go off topic from your task.
             '''
         }
         
@@ -32,6 +35,6 @@ class Agent:
             model=self.model_name,
             stream=False
         )
-        npc_reply = response.choices[0].message.content
-        self.context.append({"role": "assistant", "content": npc_reply})
-        return npc_reply
+        agent_reply = response.choices[0].message.content
+        self.context.append({"role": "assistant", "content": agent_reply})
+        return agent_reply

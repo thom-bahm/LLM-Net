@@ -3,9 +3,9 @@ from Agent import Agent
 
 def main():
     task = '''
-    You are a members of a comittee which is trying to decide on a superhero name for a new marvel movie. 
+    You are a member of a comittee which is trying to decide on a superhero name for a new marvel movie. 
     You must find a solution by the end of your conversation.
-    You should output your final conclusion delimited by triple backticks.
+    Once you have all achieved a common conclusion, you should output your final conclusion delimited by triple backticks.
     '''
     identities = [
         '''Board Chair: Mark Carney
