@@ -1,7 +1,6 @@
 import requests
 from time import sleep
 import os
-from cerebras.cloud.sdk import Cerebras
 
 class CerebrasHandler:
     CEREBRAS_URL = 'https://api.cerebras.ai/v1/chat/completions'
