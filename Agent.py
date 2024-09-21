@@ -9,7 +9,6 @@ class Agent:
         self.client = client
         self.context = self._init_context()
         
-
     def _create_system_prompt(self):
         sys_prompt = {
             "role": "system",
@@ -28,7 +27,7 @@ class Agent:
         
     def _init_context(self):
         return [self.system_prompt]
-                    
+        
     def talk(self):
         response = self.client.chat.completions.create(
             messages=self.context,

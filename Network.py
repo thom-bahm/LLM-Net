@@ -4,15 +4,17 @@ import openai
 import os
 
 class Network:
-    def __init__(self, task : str, identities : list, num_filler_agents : int):
+    def __init__(self, task : str):
         self.shared_task = task
-        self.identities = identities
+        self.identities = self._create_identities()
         self.shared_context = []
         self.client = openai.OpenAI(
             base_url='https://api.cerebras.ai/v1',
             api_key=os.environ.get("THOMAS_API_KEY")
         )
         self.agents = self._init_agents()
+        
+    def _create_identities():
         
     def _init_agents(self):
         agents = [Agent(task=self.shared_task, identity=identity, client=self.client) for identity in self.identities]
