@@ -39,3 +39,6 @@ class Network:
                     print(f"agent {i+1}: {agent_response}")
             round_count += 1
         return self.shared_context
+    
+    def run_network(self):
+        self.group_chat()

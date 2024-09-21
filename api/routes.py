@@ -26,7 +26,7 @@ def create_app(config=None):
     def hello_world():
         return "Hello World"
 
-    @app.route("/foo/<someId>")
+    @app.route("/generate_network")
     def foo_url_arg(someId):
         return jsonify({"echo": someId})
 
