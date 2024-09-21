@@ -4,8 +4,8 @@ import openai
 import os
 
 class Network:
-    def __init__(self, task : str):
-        self.shared_task = task
+    def __init__(self, prompt : str):
+        self.shared_task = prompt
         self.identities = self._create_identities()
         self.shared_context = []
         self.client = openai.OpenAI(
@@ -20,7 +20,7 @@ class Network:
         return identities
         
     def _init_agents(self):
-        agents = [Agent(task=self.shared_task, identity=identity, client=self.client) for identity in self.identities]
+        agents = [Agent(prompt=self.shared_task, identity=identity, client=self.client) for identity in self.identities]
         return agents
     
     def group_chat(self, chat_type, max_rounds):

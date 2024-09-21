@@ -8,6 +8,9 @@ import os
 from flask import Flask, jsonify
 from flask_cors import CORS
 
+# 
+from Network import Network
+#
 
 def create_app(config=None):
     app = Flask(__name__)
@@ -27,8 +30,9 @@ def create_app(config=None):
         return "Hello World"
 
     @app.route("/generate_network")
-    def foo_url_arg(someId):
-        return jsonify({"echo": someId})
+    def generate_network():
+        agent_network = Network()
+        return jsonify(), 200
 
     return app
 
