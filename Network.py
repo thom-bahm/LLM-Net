@@ -40,5 +40,5 @@ class Network:
             round_count += 1
         return self.shared_context
     
-    def run_network(self):
+    def simulate(self):
         self.group_chat()
