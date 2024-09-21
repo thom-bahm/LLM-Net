@@ -15,6 +15,9 @@ class Network:
         self.agents = self._init_agents()
         
     def _create_identities():
+        identities = []
+        
+        return identities
         
     def _init_agents(self):
         agents = [Agent(task=self.shared_task, identity=identity, client=self.client) for identity in self.identities]
