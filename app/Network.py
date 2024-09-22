@@ -4,9 +4,9 @@ import openai
 import os
 
 class Network:
-    def __init__(self, prompt : str):
+    def __init__(self, prompt : str, identities):
         self.shared_task = prompt
-        self.identities = self._create_identities()
+        self.identities = identities if identities else self._create_identities()
         self.shared_context = []
         self.client = openai.OpenAI(
             base_url='https://api.cerebras.ai/v1',

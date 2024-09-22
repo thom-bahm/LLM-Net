@@ -1,5 +1,5 @@
-from app.Network import Network
-from app.Agent import Agent
+from Network import Network
+from Agent import Agent
 
 def main():
     task = '''
@@ -81,7 +81,7 @@ def main():
         He serves on the boards of PepsiCo and the Ralph Lauren Corporation. In addition, he serves on the boards of several nonprofits, including the National Gallery of Art, Lincoln Center for the Performing Arts, the Clooney Foundation for Justice, and the Committee to Protect Journalists.'''
     ]
 
-    agent_network = Network(task=task, identities=identities, num_filler_agents=0)
+    agent_network = Network(prompt=task, identities=identities)
     agent_network.group_chat("round_robin", 5)
     
 if __name__ == '__main__':
