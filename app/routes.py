@@ -76,12 +76,12 @@ def create_app(config=None):
         vote_result = vote_data[vote_data['state'].str.lower() == state_name.lower()]
         acs_result = acs_data[acs_data['State'].str.lower() == state_name.lower()]
 
-        print("Income Data:")
-        print(income_result.head())
-        print("\nVote Data:")
-        print(vote_result.head())
-        print("\nACS Data:")
-        print(acs_result.head())
+        # print("Income Data:")
+        # print(income_result.head())
+        # print("\nVote Data:")
+        # print(vote_result.head())
+        # print("\nACS Data:")
+        # print(acs_result.head())
         
         if income_result.empty and vote_result.empty and acs_result.empty:
             return jsonify({"error": f"No data found for state '{state_name}'"}), 404

@@ -5,7 +5,7 @@ class Agent:
         self.prompt = prompt
         self.identity = identity
         self.client = client
-        self.model_name = "llama3.1-8b"
+        self.model_name = "llama3.1-70b"
         self.backstory = self._create_backstory()
         self.system_prompt = {
                     "role": "system",
@@ -42,7 +42,6 @@ class Agent:
             stream=False
         )
         backstory = response.choices[0].message.content
-        print('#\n'+backstory+'#\n')
         return backstory
         
     def chat(self, conversation_context: list):

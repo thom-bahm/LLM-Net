@@ -67,4 +67,10 @@ class Network:
         return pre_vote, post_vote, self.shared_context
     
     def approximate_weight(self):
-        return 1 - self.state_data['percent_democrat'] * 0.01
+        vote_data = self.state_data.get('2020_election_vote_data', [])
+        if vote_data == []: return random.randint(0,1)
+        
+        pct_dem = vote_data[0].get('percent_democrat', [])
+        if pct_dem == []: return random.randint(0,1)
+        
+        return 1 - pct_dem * 0.01
