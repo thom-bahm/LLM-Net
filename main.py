@@ -1,5 +1,5 @@
-from Network import Network
-from Agent import Agent
+from app.Network import Network
+from app.Agent import Agent
 
 def main():
     task = '''
