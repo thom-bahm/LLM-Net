@@ -70,7 +70,7 @@ class Agent:
                 'content': f'''
                 Based off of who you are and the news mentioned to you,
                 Respond '0' if you would vote for Kamala Harris, and '1' if you would vote for Donald Trump.
-                Do not respond with any more than either 0 or 1. ONLY ONE OPTION ALLOWED.
+                Do not respond with any more than either 1 or 0.
                 Check to make sure your answer is either '0' or '1'.
                 '''
              }]
